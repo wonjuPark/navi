@@ -34,7 +34,7 @@ import java.util.ArrayList;
 
 public class InsertMapList extends AppCompatActivity {
     static final int REQ_ADD_CONTACT = 1 ;
-   ListView listview = null;
+    ListView listview = null;
     ViewDetailAdapter vdAdapter = null;
     ArrayList<AddressVO> aList = new ArrayList<AddressVO>();
     AddressVO addressVO;
@@ -47,15 +47,15 @@ public class InsertMapList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.insert_main);
-        //manager = new DbManager(this, "NAVIDB1.db", null, 1);
+        manager = new DbManager(this, "NAVIDB1.db", null, 1);
 
         findViewById(R.id.insertAddress).setOnClickListener(mClickListener);
-       // findViewById(R.id.makePriority).setOnClickListener(mClickListener_priority);
-       // findViewById(R.id.save).setOnClickListener(mClickListener_save);
+        findViewById(R.id.makePriority).setOnClickListener(mClickListener_priority);
+        findViewById(R.id.save).setOnClickListener(mClickListener_save);
 
 
 
-        /*vdAdapter = new ViewDetailAdapter();
+        vdAdapter = new ViewDetailAdapter();
         listview = (ListView)findViewById(R.id.map_id);
         listview.setAdapter(vdAdapter);
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener(){
@@ -65,7 +65,7 @@ public class InsertMapList extends AppCompatActivity {
                 ListVO item = (ListVO) parent.getItemAtPosition(position);
                 Toast.makeText(getApplicationContext(), item.getViewtext(), Toast.LENGTH_LONG).show();
             }
-        });*/
+        });
     }
 
     Button.OnClickListener mClickListener = new View.OnClickListener(){
@@ -75,7 +75,7 @@ public class InsertMapList extends AppCompatActivity {
         }
     };
 
-   /* Button.OnClickListener mClickListener_priority = new View.OnClickListener(){
+    Button.OnClickListener mClickListener_priority = new View.OnClickListener(){
         public void  onClick(View v){
             GPSManager gps = new GPSManager(InsertMapList.this);
             calDistance = new CalDistance();
@@ -152,7 +152,7 @@ public class InsertMapList extends AppCompatActivity {
             }
 
         }
-    };*/
+    };
 
 
     private AddressVO parseJSON(StringBuffer sb) throws JSONException {
